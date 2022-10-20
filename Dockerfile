@@ -6,4 +6,4 @@ CMD ["--server.port=8080"]
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/car-rental-prototype.jar"]
+ENTRYPOINT ["java", "-jar", "/car-rental-prototype.jar", "--spring.profiles.active=prod"]
