@@ -22,9 +22,10 @@ public class UserController {
   @PostMapping("/register")
   public Resp<User> register(@RequestBody UserDTO userDTO) {
     try {
-      return Resp.of(
+      User user =
           userService.createUser(
-              userDTO.getUsername(), userDTO.getNickname(), userDTO.getPassword()));
+              userDTO.getUsername(), userDTO.getNickname(), userDTO.getPassword());
+      return Resp.of(user);
     } catch (Exception e) {
       return Resp.error(e.getMessage());
     }

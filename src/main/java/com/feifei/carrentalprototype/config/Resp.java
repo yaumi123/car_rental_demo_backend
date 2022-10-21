@@ -2,9 +2,11 @@ package com.feifei.carrentalprototype.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Getter
+@NoArgsConstructor
 public class Resp<T> {
   int code;
   String message;

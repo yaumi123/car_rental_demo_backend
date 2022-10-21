@@ -18,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
   @Autowired CarModelService carModelService;
 
   @Override
-  synchronized public Order createOrder(User user, CarModel model) {
+  public Order createOrder(User user, CarModel model) {
     if (model.getNum() < 1) {
       throw new RuntimeException("Car model number not enough!");
     }
@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
   }
 
   @Override
-  synchronized public boolean cancelOrder(String id) {
+  public boolean cancelOrder(String id) {
     Optional<Order> orderOpt = orderRepository.findById(id);
     if (orderOpt.isPresent()) {
       Order order = orderOpt.get();
